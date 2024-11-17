@@ -24,7 +24,7 @@ fn main() {
     for _ in 0..threads {
         let symbols = symbols.clone();
         let password = password.clone();
-        let attempts = Arc::clone(&attempts); // Clone Arc for thread-safe access
+        let attempts = Arc::clone(&attempts);
 
         let handle = thread::spawn(move || {
             function(&symbols, &password, password_len, attempts);
